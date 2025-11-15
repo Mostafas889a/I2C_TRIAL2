@@ -4,4 +4,22 @@ command:cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-i2c_test && 
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /usr/local/lib/python3.12/site-packages/cocotb
-     0.00ns INFO     cocotb                             Seeding Python random module with 1763217611
+     0.00ns INFO     cocotb                             Seeding Python random module with 1763217630
+     0.00ns INFO     cocotb.regression                  Found test caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func
+     0.00ns INFO     cocotb.regression                  running report_test.<locals>.wrapper_func (1/1)
+/usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/Timeout.py:19: DeprecationWarning: This method is now private.
+  cocotb.scheduler.add(self._timeout_check())
+/usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/test_functions.py:63: DeprecationWarning: This method is now private.
+  cocotb.scheduler.add(max_num_error(num_error, caravelEnv.clk))
+     0.00ns INFO     cocotb                              [caravel] start powering up
+   225.00ns INFO     cocotb                              [caravel] power up -> connect vdd
+   225.00ns INFO     cocotb                              [caravel] power up -> connect vcc
+   475.00ns INFO     cocotb                              [caravel] disable housekeeping SPI transmission
+   525.00ns INFO     cocotb                              [caravel] start resetting
+  1050.00ns INFO     cocotb                              [caravel] finish resetting
+  1325.00ns INFO     cocotb                             [TEST] Starting I2C master-slave communication test
+  1325.00ns INFO     cocotb                             [TEST] Firmware will test both simple slave and M24AA64 EEPROM
+  1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] initialized with address: 0x30fffffc
+  1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [15:0]  = OUTPUT from Caravel (CPU writes)
+  1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [31:16] = INPUT to Caravel (CPU reads)
+  1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Starting Wishbone interface monitoring...
