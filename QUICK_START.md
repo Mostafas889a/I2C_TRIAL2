@@ -21,6 +21,12 @@
 - Fixed AttributeError with cocotb.log.error.counter
 - See **COCOTB_TEST_FIX.md** for details
 
+### GPIO Change
+- I2C pins moved from GPIO 5/6 to GPIO 8/9
+- Firmware updated to configure new GPIOs
+- All documentation updated
+- See **GPIO_CHANGE_SUMMARY.md** for details
+
 ## How to Run Tests
 
 ### Option 1: Using the Helper Script (Recommended)
