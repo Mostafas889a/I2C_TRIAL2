@@ -25,7 +25,9 @@ module i2c_slave_test #(
     reg [3:0] state;
     reg [3:0] bit_cnt;
     reg [7:0] shift_reg;
+    /* verilator lint_off UNUSEDSIGNAL */
     reg [7:0] reg_addr;
+    /* verilator lint_on UNUSEDSIGNAL */
     reg [7:0] registers [0:3];
     reg sda_out;
     reg sda_oen_reg;
@@ -33,7 +35,6 @@ module i2c_slave_test #(
     reg scl_sync1, scl_sync2, scl_sync3;
     reg sda_sync1, sda_sync2, sda_sync3;
     
-    wire scl = scl_sync3;
     wire sda = sda_sync3;
     wire scl_posedge = scl_sync3 & ~scl_sync2;
     wire scl_negedge = ~scl_sync3 & scl_sync2;

@@ -46,10 +46,6 @@ module user_project (
         .READ_FIFO(1),
         .READ_FIFO_DEPTH(16)
     ) i2c_master (
-    `ifdef USE_POWER_PINS
-        .VPWR(vccd1),
-        .VGND(vssd1),
-    `endif
         .clk_i(wb_clk_i),
         .rst_i(wb_rst_i),
         .adr_i(wbs_adr_i),
