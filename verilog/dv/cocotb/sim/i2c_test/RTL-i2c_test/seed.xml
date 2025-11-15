@@ -1,8 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1763217025" />
-    <testcase name="i2c_test" classname="i2c_test.i2c_test" file="/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.py" lineno="8" time="0.23561930656433105" sim_time_ns="0.001" ratio_time="0.004244134381776437">
-      <failure message="Test failed with RANDOM_SEED=1763217025" />
-    </testcase>
+    <property name="random_seed" value="1763217106" />
+    <testcase name="report_test.&lt;locals&gt;.wrapper_func" classname="caravel_cocotb.interfaces.common_functions.test_functions" file="/usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/test_functions.py" lineno="101" time="0.25936293601989746" sim_time_ns="1325.001" ratio_time="5108.675203685812" />
   </testsuite>
 </testsuites>

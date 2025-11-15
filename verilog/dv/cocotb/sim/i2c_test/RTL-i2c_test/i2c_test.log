@@ -1,0 +1,23 @@
+     0.00ns INFO     cocotb                              [caravel] start powering up
+   225.00ns INFO     cocotb                              [caravel] power up -> connect vdd
+   225.00ns INFO     cocotb                              [caravel] power up -> connect vcc
+   475.00ns INFO     cocotb                              [caravel] disable housekeeping SPI transmission
+   525.00ns INFO     cocotb                              [caravel] start resetting
+  1050.00ns INFO     cocotb                              [caravel] finish resetting
+  1325.00ns INFO     cocotb                             [TEST] Starting I2C master-slave communication test
+  1325.00ns INFO     cocotb                             [TEST] Firmware will test both simple slave and M24AA64 EEPROM
+  1325.00ns INFO     cocotb                             [TEST] Phase 1: Simple slave (4 registers)
+  1325.00ns INFO     cocotb                             [TEST] Phase 2: EEPROM slave (8KB memory)
+  1325.00ns INFO     cocotb                             [TEST] Management GPIO will toggle to indicate progress
+  1325.00ns INFO     cocotb                             [TEST] Final GPIO=1 indicates all tests passed
+  1325.00ns INFO     cocotb                             Test passed with (0)criticals (0)errors (0)warnings 
+  1325.00ns INFO     cocotb                             Cycles consumed = 53 recommened timeout = 59 cycles
+  1325.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func passed
+  1325.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
+                                                        ** TEST                                                                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *****************************************************************************************************************************************************
+                                                        ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   PASS        1325.00           0.26       5108.68  **
+                                                        *****************************************************************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                                                              1325.00           0.41       3209.05  **
+                                                        *****************************************************************************************************************************************************
+                                                        
