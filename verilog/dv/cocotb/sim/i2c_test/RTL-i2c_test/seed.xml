@@ -1,8 +1,8 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1763216900" />
-    <testcase name="i2c_test" classname="i2c_test.i2c_test" file="/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.py" lineno="6" time="0.21845698356628418" sim_time_ns="0.001" ratio_time="0.00457756023028021">
-      <failure message="Test failed with RANDOM_SEED=1763216900" />
+    <property name="random_seed" value="1763216972" />
+    <testcase name="i2c_test" classname="i2c_test.i2c_test" file="/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.py" lineno="8" time="0.23303842544555664" sim_time_ns="0.001" ratio_time="0.004291137815954837">
+      <failure message="Test failed with RANDOM_SEED=1763216972" />
     </testcase>
   </testsuite>
 </testsuites>
