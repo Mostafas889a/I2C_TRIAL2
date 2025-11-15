@@ -27,3 +27,14 @@ command:cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-compilation 
 /nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206:        : Pruning (signed) 31 high bits of the expression.
 /nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206: warning: Port 4 (WP) of M24AA64 expects 1 bits, got 32.
 /nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206:        : Pruning (signed) 31 high bits of the expression.
+command:cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-compilation &&iverilog -g2012 -Ttyp  -DUSE_POWER_PINS -DUNIT_DELAY=#1 -DCOCOTB_SIM -DFUNCTIONAL -DWAVE_GEN -DIVERILOG -Dsky130 -DCPU_TYPE_VexRISC -DRUN_PATH=\"/workspace/I2C_TRIAL2/verilog/dv/cocotb\" -DTAG=\"i2c_test\" -DMCW_ROOT=\"/nc/templates/mgmt_core_wrapper\" -DUSER_PROJECT_ROOT=\"/workspace/I2C_TRIAL2\" -DCARAVEL_ROOT=\"/nc/templates/caravel\" -DSIM_PATH=\"/workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/\" -DSIM=\"RTL\" -DTESTNAME=\"i2c_test\" -DFTESTNAME=\"RTL-i2c_test\" -DSIM_DIR=\"/workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test\" -DCORNER_nom  -I /workspace/I2C_TRIAL2/verilog/rtl -o /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-compilation/sim.vvp -s caravel_top /nc/templates/caravel/verilog/rtl/toplevel_cocotb.v
+
+/nc/templates/caravel/verilog/rtl/caravel.v:236: warning: input port clock is coerced to inout.
+/nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206: warning: Port 1 (A0) of M24AA64 expects 1 bits, got 32.
+/nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206:        : Pruning (signed) 31 high bits of the expression.
+/nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206: warning: Port 2 (A1) of M24AA64 expects 1 bits, got 32.
+/nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206:        : Pruning (signed) 31 high bits of the expression.
+/nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206: warning: Port 3 (A2) of M24AA64 expects 1 bits, got 32.
+/nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206:        : Pruning (signed) 31 high bits of the expression.
+/nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206: warning: Port 4 (WP) of M24AA64 expects 1 bits, got 32.
+/nc/templates/caravel/verilog/rtl/toplevel_cocotb.v:206:        : Pruning (signed) 31 high bits of the expression.
