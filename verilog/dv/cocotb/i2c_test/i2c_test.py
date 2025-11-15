@@ -18,7 +18,7 @@ async def i2c_test(dut):
     virtual_gpio.start()
 
     await virtual_gpio.wait_output(1)
-    caravelEnv.drive_gpio_in((9),0)
+    caravelEnv.dut.gpio9_en = 1
     await cocotb.start(i2c_slave(caravelEnv.dut.gpio8_monitor, caravelEnv.dut.gpio9_monitor, caravelEnv.dut.gpio9, {0x2,0x4,0x6,0x18}).run())
     await virtual_gpio.wait_output(2)
     await ClockCycles(caravelEnv.clk, 20000)
