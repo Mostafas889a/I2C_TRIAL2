@@ -15,7 +15,9 @@ This project integrates an I2C master controller into a Caravel user project wit
 
 ## Design Components
 - **I2C Master**: CF_I2C v2.0.0 IP with Wishbone interface (FIFO-based)
-- **I2C Slave**: Custom slave module with 4-register interface for loopback testing (address 0x50)
+- **I2C Slaves** (for testing):
+  - Custom slave module with 4-register interface (address 0x50)
+  - M24AA64 64K-bit EEPROM model (address 0x50, 8KB memory)
 - **Wishbone Integration**: Direct connection to CF_I2C_WB wrapper
 - **Interrupt**: Single IRQ line from I2C master to user_irq[0]
 
@@ -35,6 +37,7 @@ This project integrates an I2C master controller into a Caravel user project wit
 - `verilog/rtl/user_project.v` - Main user project with CF_I2C_WB instantiation
 - `verilog/rtl/user_project_wrapper.v` - Caravel wrapper (updated)
 - `verilog/rtl/i2c_slave_test.v` - Custom I2C slave for testing
+- `verilog/rtl/M24AA64.v` - Microchip 24AA64 EEPROM model (64K-bit)
 - `verilog/includes/includes.rtl.caravel_user_project` - File list
 
 ### Verification
