@@ -73,15 +73,10 @@ In file included from /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/f
       |                  |
       |                  int
 /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:36:26: note: in expansion of macro 'I2C_BASE'
-   36 |     CF_I2C_setGclkEnable(I2C_BASE);
+   36 |     CF_I2C_setGclkEnable(I2C_BASE, 1);
       |                          ^~~~~~~~
 In file included from /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:2:
 /nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:127:56: note: expected 'CF_I2C_TYPE_PTR' {aka 'struct _CF_I2C_TYPE_ *'} but argument is of type 'int'
   127 | CF_DRIVER_STATUS CF_I2C_setGclkEnable (CF_I2C_TYPE_PTR i2c, uint32_t value);
       |                                        ~~~~~~~~~~~~~~~~^~~
-/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:36:5: error: too few arguments to function 'CF_I2C_setGclkEnable'
-   36 |     CF_I2C_setGclkEnable(I2C_BASE);
-      |     ^~~~~~~~~~~~~~~~~~~~
-/nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:127:18: note: declared here
-  127 | CF_DRIVER_STATUS CF_I2C_setGclkEnable (CF_I2C_TYPE_PTR i2c, uint32_t value);
-      |                  ^~~~~~~~~~~~~~~~~~~~
+Pass: hex generation

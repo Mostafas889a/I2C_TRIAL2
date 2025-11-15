@@ -33,7 +33,7 @@ void main() {
     GPIOs_loadConfigs();
     User_enableIF();  
     vgpio_write_output(1);
-    CF_I2C_setGclkEnable(I2C_BASE);
+    CF_I2C_setGclkEnable(I2C_BASE, 1);
     vgpio_write_output(2);
     return;
 }
