@@ -1,5 +1,5 @@
 #include <firmware_apis.h>
-#include "i2c_test.h"
+#include "CF_I2C.h"
 
 #define VGPIO_REG_ADDR 0x30FFFFFC
 
