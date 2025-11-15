@@ -31,6 +31,8 @@ void main() {
     GPIOs_configure(5, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
     GPIOs_configure(6, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
     GPIOs_loadConfigs();
+    User_enableIF();
+
     vgpio_write_output(5);
     vgpio_write_output(6);
     vgpio_write_output(7);

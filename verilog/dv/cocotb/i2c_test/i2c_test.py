@@ -14,4 +14,4 @@ async def i2c_test(dut):
     
     virtual_gpio = VirtualGPIOModel(caravelEnv)
     virtual_gpio.start()
-    await virtual_gpio.wait_output(1)
+    await virtual_gpio.wait_output(5)
