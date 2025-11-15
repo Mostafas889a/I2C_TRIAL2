@@ -56,6 +56,7 @@ class i2c_slave:
         # wait for START
         while True:
             await FallingEdge(self.sda_in) # wait for SDA falling
+            cocotb.log.info("[I2C Slave] Detected SDA falling")
             if self.self.scl.value.binstr == '1':
                 cocotb.log.info("[I2C Slave] START detected")
                 break

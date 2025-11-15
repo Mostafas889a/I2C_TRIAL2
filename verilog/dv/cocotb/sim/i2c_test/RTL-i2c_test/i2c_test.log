@@ -10,7 +10,3 @@
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [15:0]  = OUTPUT from Caravel (CPU writes)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [31:16] = INPUT to Caravel (CPU reads)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Starting Wishbone interface monitoring...
-699575.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0000, INPUT[31:16]=0x0000
-700075.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0001
-1069250.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0001, INPUT[31:16]=0x0000
-1096125.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0002
