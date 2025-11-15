@@ -4,6 +4,8 @@ from caravel_cocotb.caravel_interfaces import VirtualGPIOModel
 import cocotb
 from cocotb.triggers import RisingEdge
 from i2c_slave import i2c_slave
+from cocotb.triggers import Timer, ClockCycles, FallingEdge, Event, RisingEdge, First
+
 
 @cocotb.test()
 @report_test
