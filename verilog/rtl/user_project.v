@@ -5,7 +5,8 @@
 
 
 `define USER_VIP \
-    wire sda = gpio
+    wire sda = gpio9; \
+    wire scl = gpio8; \
    pullup sda_pu(gpio9); \
    pullup scl_pu(gpio8); 
 
