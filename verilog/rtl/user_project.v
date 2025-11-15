@@ -5,14 +5,14 @@
 
 
 `define USER_VIP \
-    wire i2c_scl_o = gpio5_monitor; \
-    wire i2c_sda_o = gpio6_monitor; \
+    wire i2c_scl_o = gpio8_monitor; \
+    wire i2c_sda_o = gpio9_monitor; \
     tri1  sda_pin = ~i2c_sda_o ? 1'b0 : 1'bz; \
     tri1  scl_pin = ~i2c_scl_o ? 1'b0 : 1'bz; \
-    assign  gpio5_en = 1'b1; \
-    assign  gpio6_en = 1'b1; \
-    assign  gpio5 = scl_pin; \
-    assign  gpio6 = sda_pin; \
+    assign  gpio8_en = 1'b1; \
+    assign  gpio9_en = 1'b1; \
+    assign  gpio8 = scl_pin; \
+    assign  gpio9 = sda_pin; \
     M24AA64 slave(.A0(1), .A1(0), .A2(1), .WP(0), .SDA(sda_pin), .SCL(scl_pin), .RESET(resetb_tb));
 
 
@@ -82,18 +82,18 @@ module user_project (
         .sda_oen_o(sda_oen)
     );
 
-    assign scl_i = io_in[5];
-    assign io_out[5] = scl_o;
-    assign io_oeb[5] = ~scl_oen;
+    assign scl_i = io_in[8];
+    assign io_out[8] = scl_o;
+    assign io_oeb[8] = ~scl_oen;
 
-    assign sda_i = io_in[6];
-    assign io_out[6] = sda_o;
-    assign io_oeb[6] = ~sda_oen;
+    assign sda_i = io_in[9];
+    assign io_out[9] = sda_o;
+    assign io_oeb[9] = ~sda_oen;
 
-    assign io_out[37:7] = 31'b0;
-    assign io_out[4:0] = 5'b0;
-    assign io_oeb[37:7] = 31'b1;
-    assign io_oeb[4:0] = 5'b1;
+    assign io_out[37:10] = 28'b0;
+    assign io_out[7:0] = 8'b0;
+    assign io_oeb[37:10] = 28'b1;
+    assign io_oeb[7:0] = 8'b1;
 
     assign user_irq[0] = i2c_irq;
     assign user_irq[2:1] = 2'b0;
