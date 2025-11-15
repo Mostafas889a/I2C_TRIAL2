@@ -6,6 +6,7 @@
 ✅ **EEPROM Added** - M24AA64 EEPROM model integrated for comprehensive testing
 ✅ **Configuration Fixed** - All paths corrected
 ✅ **Test Fixed** - Cocotb test updated with proper decorators
+✅ **GPIO Updated** - I2C moved to GPIO 8/9 (was GPIO 5/6)
 
 ## Important Fixes Applied
 
