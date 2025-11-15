@@ -97,6 +97,9 @@
     wire i2c_sda_o = gpio6_monitor; \
     tri1  sda_pin = ~i2c_sda_o ? 1'b0 : 1'bz; \
     tri1  scl_pin = ~i2c_scl_o ? 1'b0 : 1'bz; \
+    assign  gpio5 = scl_pin;
+    assign  gpio5 = scl_pin;
+    assign  gpio6 = sda_pin;
     M24AA64 slave(.A0(1), .A1(0), .A1(1), .WP(0), .SDA(sda_pin), .SCL(scl_pin), .RESET(resetb_tb));
 
 `endif // __USER_DEFINES_H
