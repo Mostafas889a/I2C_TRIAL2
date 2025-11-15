@@ -66,17 +66,72 @@ In file included from /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/f
 /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/mgmt_gpio.h:30:5: note: previous implicit declaration of 'dummyDelay' with type 'void(int)'
    30 |     dummyDelay(1);
       |     ^~~~~~~~~~
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c: In function 'i2c_write_address':
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:5:18: warning: passing argument 1 of 'CF_I2C_writeDataToWriteFIFO' makes pointer from integer without a cast [-Wint-conversion]
+    5 | #define I2C_BASE 0x30000000
+      |                  ^~~~~~~~~~
+      |                  |
+      |                  int
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:27:33: note: in expansion of macro 'I2C_BASE'
+   27 |     CF_I2C_writeDataToWriteFIFO(I2C_BASE, data);
+      |                                 ^~~~~~~~
+In file included from /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:2:
+/nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:600:62: note: expected 'CF_I2C_TYPE_PTR' {aka 'struct _CF_I2C_TYPE_ *'} but argument is of type 'int'
+  600 | CF_DRIVER_STATUS CF_I2C_writeDataToWriteFIFO(CF_I2C_TYPE_PTR i2c, uint8_t data);
+      |                                              ~~~~~~~~~~~~~~~~^~~
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:28:36: error: 'addr' undeclared (first use in this function); did you mean 'adr'?
+   28 |     CF_I2C_setCommandReg(I2C_BASE, addr);
+      |                                    ^~~~
+      |                                    adr
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:28:36: note: each undeclared identifier is reported only once for each function it appears in
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:5:18: warning: passing argument 1 of 'CF_I2C_setCommandReg' makes pointer from integer without a cast [-Wint-conversion]
+    5 | #define I2C_BASE 0x30000000
+      |                  ^~~~~~~~~~
+      |                  |
+      |                  int
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:28:26: note: in expansion of macro 'I2C_BASE'
+   28 |     CF_I2C_setCommandReg(I2C_BASE, addr);
+      |                          ^~~~~~~~
+/nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:143:55: note: expected 'CF_I2C_TYPE_PTR' {aka 'struct _CF_I2C_TYPE_ *'} but argument is of type 'int'
+  143 | CF_DRIVER_STATUS CF_I2C_setCommandReg(CF_I2C_TYPE_PTR i2c, uint32_t value);
+      |                                       ~~~~~~~~~~~~~~~~^~~
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:5:18: warning: passing argument 1 of 'CF_I2C_sendStopCommand' makes pointer from integer without a cast [-Wint-conversion]
+    5 | #define I2C_BASE 0x30000000
+      |                  ^~~~~~~~~~
+      |                  |
+      |                  int
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:29:28: note: in expansion of macro 'I2C_BASE'
+   29 |     CF_I2C_sendStopCommand(I2C_BASE)
+      |                            ^~~~~~~~
+/nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:543:57: note: expected 'CF_I2C_TYPE_PTR' {aka 'struct _CF_I2C_TYPE_ *'} but argument is of type 'int'
+  543 | CF_DRIVER_STATUS CF_I2C_sendStopCommand(CF_I2C_TYPE_PTR i2c);
+      |                                         ~~~~~~~~~~~~~~~~^~~
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:29:37: error: expected ';' before '}' token
+   29 |     CF_I2C_sendStopCommand(I2C_BASE)
+      |                                     ^
+      |                                     ;
+   30 | }
+      | ~                                    
 /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c: In function 'main':
 /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:5:18: warning: passing argument 1 of 'CF_I2C_setGclkEnable' makes pointer from integer without a cast [-Wint-conversion]
     5 | #define I2C_BASE 0x30000000
       |                  ^~~~~~~~~~
       |                  |
       |                  int
-/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:36:26: note: in expansion of macro 'I2C_BASE'
-   36 |     CF_I2C_setGclkEnable(I2C_BASE, 1);
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:41:26: note: in expansion of macro 'I2C_BASE'
+   41 |     CF_I2C_setGclkEnable(I2C_BASE, 1);
       |                          ^~~~~~~~
-In file included from /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:2:
 /nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:127:56: note: expected 'CF_I2C_TYPE_PTR' {aka 'struct _CF_I2C_TYPE_ *'} but argument is of type 'int'
   127 | CF_DRIVER_STATUS CF_I2C_setGclkEnable (CF_I2C_TYPE_PTR i2c, uint32_t value);
       |                                        ~~~~~~~~~~~~~~~~^~~
-Pass: hex generation
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:5:18: warning: passing argument 1 of 'CF_I2C_setPrescaler' makes pointer from integer without a cast [-Wint-conversion]
+    5 | #define I2C_BASE 0x30000000
+      |                  ^~~~~~~~~~
+      |                  |
+      |                  int
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:42:25: note: in expansion of macro 'I2C_BASE'
+   42 |     CF_I2C_setPrescaler(I2C_BASE,0xF0);
+      |                         ^~~~~~~~
+/nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:223:54: note: expected 'CF_I2C_TYPE_PTR' {aka 'struct _CF_I2C_TYPE_ *'} but argument is of type 'int'
+  223 | CF_DRIVER_STATUS CF_I2C_setPrescaler(CF_I2C_TYPE_PTR i2c, uint32_t value);
+      |                                      ~~~~~~~~~~~~~~~~^~~

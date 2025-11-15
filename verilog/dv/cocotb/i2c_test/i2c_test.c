@@ -39,8 +39,8 @@ void main() {
     User_enableIF();  
     vgpio_write_output(1);
     CF_I2C_setGclkEnable(I2C_BASE, 1);
-    CF_I2C_setPrescaler(I2C_BASE,0xF0)
-    EF_I2C_writeToAddress_no_wait(I2C_BASE, 0x5, 0xAC);
+    CF_I2C_setPrescaler(I2C_BASE,0xF0);
+    i2c_write_address(0x5, 0x4D);
     vgpio_write_output(2);
     return;
 }
