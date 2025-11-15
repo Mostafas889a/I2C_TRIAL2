@@ -91,6 +91,6 @@
 `define USE_USER_VIP
 
 
-`define USER_VIP M24AA64 slave(.A0(1), .A1(0), .A1(0))
+`define USER_VIP M24AA64 slave(.A0(1), .A1(0), .A1(0), .WP(), .SDA(), .SCL(), .RESET())
 
 `endif // __USER_DEFINES_H
