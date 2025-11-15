@@ -1,0 +1,12 @@
+design_info:
+  clock_freq_mhz: 25
+  includes:
+    - ../../../rtl
+    - ../../../../ip/CF_I2C/hdl/rtl
+    - ../../../../ip/CF_I2C/hdl/rtl/bus_wrappers
+    - ../../../../ip/CF_IP_UTIL/hdl
+  define_macros:
+    - SIM
+    - FUNCTIONAL
+    - USE_POWER_PINS
+  top_design: caravel
