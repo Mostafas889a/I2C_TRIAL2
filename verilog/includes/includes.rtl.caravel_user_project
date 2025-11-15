@@ -14,7 +14,13 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Caravel user project includes
--v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
--v $(USER_PROJECT_VERILOG)/rtl/user_proj_example.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_project.v
+-v $(USER_PROJECT_VERILOG)/rtl/i2c_slave_test.v
 
- 
+-v $(USER_PROJECT_VERILOG)/../ip/CF_IP_UTIL/hdl/cf_util_lib.v
+-v $(USER_PROJECT_VERILOG)/../ip/CF_I2C/hdl/rtl/axis_fifo.v
+-v $(USER_PROJECT_VERILOG)/../ip/CF_I2C/hdl/rtl/i2c_master.v
+-v $(USER_PROJECT_VERILOG)/../ip/CF_I2C/hdl/rtl/i2c_master_wbs_16.v
+-v $(USER_PROJECT_VERILOG)/../ip/CF_I2C/hdl/rtl/i2c_master_wbs_8.v
+-v $(USER_PROJECT_VERILOG)/../ip/CF_I2C/hdl/rtl/bus_wrappers/CF_I2C_WB.v
