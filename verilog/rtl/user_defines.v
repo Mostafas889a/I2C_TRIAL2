@@ -90,7 +90,8 @@
 `define USER_CONFIG_GPIO_37_INIT `GPIO_MODE_INVALID
 `define USE_USER_VIP
 
+assign  sda_pin = ~i2c_sda_o ? 1'b0 : 1'bz;
 
-`define USER_VIP M24AA64 slave(.A0(1), .A1(0), .A1(0), .WP(), .SDA(), .SCL(), .RESET())
+`define USER_VIP M24AA64 slave(.A0(1), .A1(0), .A1(1), .WP(0), .SDA(), .SCL(), .RESET())
 
 `endif // __USER_DEFINES_H
