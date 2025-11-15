@@ -31,13 +31,7 @@ void main() {
     GPIOs_configure(5, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
     GPIOs_configure(6, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
     GPIOs_loadConfigs();
-    User_enableIF();
-
-    vgpio_write_output(5);
-    vgpio_write_output(6);
-    vgpio_write_output(7);
-    
-    
+    User_enableIF();    
     i2c_init(62);
     
     
@@ -45,7 +39,7 @@ void main() {
     i2c_write_byte(I2C_SLAVE_ADDR, 1, 0x55);
     i2c_write_byte(I2C_SLAVE_ADDR, 2, 0xDE);
     i2c_write_byte(I2C_SLAVE_ADDR, 3, 0xAD);
-    vgpio_write_output(1);
+    vgpio_write_output(5);
 
     
     uint8_t val0 = i2c_read_byte(I2C_SLAVE_ADDR, 0);

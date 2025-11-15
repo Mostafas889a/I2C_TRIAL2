@@ -10,16 +10,16 @@
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [15:0]  = OUTPUT from Caravel (CPU writes)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [31:16] = INPUT to Caravel (CPU reads)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Starting Wishbone interface monitoring...
-733350.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0000, INPUT[31:16]=0x0000
-760250.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0005
-760275.00ns INFO     cocotb                             Test passed with (0)criticals (0)errors (0)warnings 
-760275.00ns INFO     cocotb                             Cycles consumed = 30411 recommened timeout = 33453 cycles
-760275.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func passed
-760275.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
-                                                        ** TEST                                                                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
-                                                        *****************************************************************************************************************************************************
-                                                        ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   PASS      760275.00          12.83      59235.39  **
-                                                        *****************************************************************************************************************************************************
-                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                                                            760275.00          12.99      58530.74  **
-                                                        *****************************************************************************************************************************************************
-                                                        
+1835800.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0000, INPUT[31:16]=0x0000
+1862700.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0005
+1862725.00ns INFO     cocotb                             Test passed with (0)criticals (0)errors (0)warnings 
+1862725.00ns INFO     cocotb                             Cycles consumed = 74509 recommened timeout = 81960 cycles
+1862725.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func passed
+1862725.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
+                                                         ** TEST                                                                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                         *****************************************************************************************************************************************************
+                                                         ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   PASS     1862725.00          32.48      57348.24  **
+                                                         *****************************************************************************************************************************************************
+                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                                                           1862725.00          32.64      57074.42  **
+                                                         *****************************************************************************************************************************************************
+                                                         
