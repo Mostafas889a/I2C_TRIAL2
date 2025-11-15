@@ -4,12 +4,21 @@
 ✅ **RTL Complete** - All modules created and lint-clean
 ✅ **Verification Ready** - Tests prepared but NOT executed (per user request)
 ✅ **EEPROM Added** - M24AA64 EEPROM model integrated for comprehensive testing
+✅ **Configuration Fixed** - All paths corrected
+✅ **Test Fixed** - Cocotb test updated with proper decorators
 
-## Important Configuration Fix
+## Important Fixes Applied
 
-The project has been configured with the correct paths:
+### Configuration Fix
 - `USER_PROJECT_ROOT=/workspace/I2C_TRIAL2` (updated in design_info.yaml)
 - All environment variables properly set in run_test.sh
+- See **CONFIGURATION_FIX.md** for details
+
+### Test Fix
+- Added `@report_test` decorator to i2c_test.py (required for caravel-cocotb)
+- Removed manual test monitoring code (handled automatically by decorator)
+- Fixed AttributeError with cocotb.log.error.counter
+- See **COCOTB_TEST_FIX.md** for details
 
 ## How to Run Tests
 
