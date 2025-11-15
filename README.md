@@ -1,1 +1,3 @@
-# I2C_TRIAL2
+# Native Chips Caravel User Project 
+
+Add your project description here.
