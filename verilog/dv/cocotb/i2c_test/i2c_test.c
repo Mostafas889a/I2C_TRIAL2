@@ -1,6 +1,28 @@
 #include <firmware_apis.h>
 #include "i2c_test.h"
 
+#define VGPIO_REG_ADDR 0x30FFFFFC
+
+void vgpio_write_output(uint16_t value)
+{
+    volatile uint32_t *vgpio_reg = (volatile uint32_t *)VGPIO_REG_ADDR;
+    uint32_t reg_val = *vgpio_reg;
+    reg_val = (reg_val & 0xFFFF0000) | (value & 0xFFFF);
+    *vgpio_reg = reg_val;
+}
+
+uint16_t vgpio_read_input(void)
+{
+    volatile uint32_t *vgpio_reg = (volatile uint32_t *)VGPIO_REG_ADDR;
+    uint32_t reg_val = *vgpio_reg;
+    return (uint16_t)((reg_val >> 16) & 0xFFFF);
+}
+
+void vgpio_wait_val(uint16_t val)
+{
+    while (vgpio_read_input() != val);
+}
+
 void main() {
     ManagmentGpio_outputEnable();
     ManagmentGpio_write(0);
@@ -21,8 +43,8 @@ void main() {
     i2c_write_byte(I2C_SLAVE_ADDR, 1, 0x55);
     i2c_write_byte(I2C_SLAVE_ADDR, 2, 0xDE);
     i2c_write_byte(I2C_SLAVE_ADDR, 3, 0xAD);
-    
-    ManagmentGpio_write(1);
+    vgpio_write_output(1);
+
     
     uint8_t val0 = i2c_read_byte(I2C_SLAVE_ADDR, 0);
     uint8_t val1 = i2c_read_byte(I2C_SLAVE_ADDR, 1);
