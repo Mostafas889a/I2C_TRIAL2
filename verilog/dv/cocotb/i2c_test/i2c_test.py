@@ -8,7 +8,7 @@ from cocotb.triggers import RisingEdge
 @report_test
 async def i2c_test(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=561831)
-    caravelEnv.drive_gpio_in((5,6),0)
+    caravelEnv.drive_gpio_in((8,9),0)
     cocotb.log.info("[TEST] Starting I2C master-slave communication test")
     cocotb.log.info("[TEST] Firmware will test both simple slave and M24AA64 EEPROM")
     

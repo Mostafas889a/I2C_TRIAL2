@@ -28,8 +28,8 @@ void main() {
     
     enableHkSpi(0);
     
-    GPIOs_configure(5, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
-    GPIOs_configure(6, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
+    GPIOs_configure(8, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
+    GPIOs_configure(9, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
     GPIOs_loadConfigs();
     User_enableIF();    
     i2c_init(62);

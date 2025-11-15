@@ -24,8 +24,8 @@ This project integrates an I2C master controller into a Caravel user project wit
 ## Implementation Details
 - **Address Space**: Base 0x3000_0000 (full 64KB window for I2C master)
 - **GPIO Pins**: 
-  - GPIO 5: I2C SCL (bidirectional, open-drain)
-  - GPIO 6: I2C SDA (bidirectional, open-drain)
+  - GPIO 8: I2C SCL (bidirectional, open-drain)
+  - GPIO 9: I2C SDA (bidirectional, open-drain)
 - **Clock**: 25 MHz Wishbone clock
 - **I2C Clock**: Configurable via prescaler (default 100 kHz with prescale = 62)
 

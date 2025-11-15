@@ -91,19 +91,19 @@ The EF_I2C IP provides a single interrupt output:
 
 ## I/O Pad Configuration
 
-### I2C Signals (GPIO 5, 6)
+### I2C Signals (GPIO 8, 9)
 Both SCL and SDA are **bidirectional, open-drain** signals:
 
 ```verilog
-// SCL - GPIO 5
-assign scl_i = mprj_io_in[5];
-assign mprj_io_out[5] = scl_o;
-assign mprj_io_oeb[5] = ~scl_oe;  // Active-low OEB
+// SCL - GPIO 8
+assign scl_i = io_in[8];
+assign io_out[8] = scl_o;
+assign io_oeb[8] = ~scl_oen;  // Active-low OEB
 
-// SDA - GPIO 6
-assign sda_i = mprj_io_in[6];
-assign mprj_io_out[6] = sda_o;
-assign mprj_io_oeb[6] = ~sda_oe;  // Active-low OEB
+// SDA - GPIO 9
+assign sda_i = io_in[9];
+assign io_out[9] = sda_o;
+assign io_oeb[9] = ~sda_oen;  // Active-low OEB
 ```
 
 ### Open-Drain Behavior
