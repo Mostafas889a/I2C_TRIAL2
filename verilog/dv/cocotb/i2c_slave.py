@@ -104,6 +104,6 @@ class i2c_slave:
         while True:
             await RisingEdge(self.sda_in)
             now = cocotb.utils.get_sim_time("ns")
-            if self.self.scl.value.binstr == '1' and now > getattr(self, "_last_edge", 0):
+            if self.scl.value.binstr == '1' and now > getattr(self, "_last_edge", 0):
                 cocotb.log.debug("[I2C Slave] STOP condition confirmed")
                 break

@@ -10,3 +10,26 @@
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [15:0]  = OUTPUT from Caravel (CPU writes)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [31:16] = INPUT to Caravel (CPU reads)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Starting Wishbone interface monitoring...
+699575.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0000, INPUT[31:16]=0x0000
+700075.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0001
+700100.00ns INFO     cocotb                             [I2C Slave] Wait SDA falling
+1012125.00ns INFO     cocotb                             [I2C Slave] Detected SDA falling
+1012125.00ns INFO     cocotb                             [I2C Slave] START detected
+1015675.00ns ERROR    ..k 6.i2c_slave.handle_transaction Exception raised by this forked coroutine
+1015675.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func failed
+                                                         Traceback (most recent call last):
+                                                           File "/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_slave.py", line 66, in handle_transaction
+                                                             address = await self.collect_bits(7)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                           File "/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_slave.py", line 21, in collect_bits
+                                                             return int(result, 2)
+                                                                    ^^^^^^^^^^^^^^
+                                                         ValueError: invalid literal for int() with base 2: 'z1z1z1z'
+1015675.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
+                                                         ** TEST                                                                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                         *****************************************************************************************************************************************************
+                                                         ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   FAIL     1015675.00          16.08      63173.98  **
+                                                         *****************************************************************************************************************************************************
+                                                         ** TESTS=1 PASS=0 FAIL=1 SKIP=0                                                                           1015675.00          16.23      62563.53  **
+                                                         *****************************************************************************************************************************************************
+                                                         
