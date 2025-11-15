@@ -41,5 +41,6 @@ void main() {
     CF_I2C_setGclkEnable(I2C_BASE, 1);
     CF_I2C_setPrescaler(I2C_BASE,4);
     CF_I2C_transmitByte(I2C_BASE, 0xAD, 0xAA);
+    vgpio_write_output(2);
     return;
 }
