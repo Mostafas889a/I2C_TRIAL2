@@ -25,7 +25,8 @@ void vgpio_wait_val(uint16_t val)
 
 void i2c_write_address(char adr, char data){
     CF_I2C_writeDataToWriteFIFO(I2C_BASE, data);
-
+    CF_I2C_setCommandReg(I2C_BASE, addr);
+    CF_I2C_sendStopCommand(I2C_BASE)
 }
 void main() {
     ManagmentGpio_outputEnable();
@@ -39,6 +40,7 @@ void main() {
     vgpio_write_output(1);
     CF_I2C_setGclkEnable(I2C_BASE, 1);
     CF_I2C_setPrescaler(I2C_BASE,0xF0)
+    EF_I2C_writeToAddress_no_wait(I2C_BASE, 0x5, 0xAC);
     vgpio_write_output(2);
     return;
 }
