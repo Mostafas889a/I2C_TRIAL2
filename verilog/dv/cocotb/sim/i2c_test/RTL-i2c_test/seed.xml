@@ -1,8 +1,8 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1763223237" />
-    <testcase name="report_test.&lt;locals&gt;.wrapper_func" classname="caravel_cocotb.interfaces.common_functions.test_functions" file="/usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/test_functions.py" lineno="101" time="16.085620641708374" sim_time_ns="1012125.001" ratio_time="62921.10348391924">
-      <failure message="Test failed with RANDOM_SEED=1763223237" />
+    <property name="random_seed" value="1763223483" />
+    <testcase name="report_test.&lt;locals&gt;.wrapper_func" classname="caravel_cocotb.interfaces.common_functions.test_functions" file="/usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/test_functions.py" lineno="101" time="16.211920976638794" sim_time_ns="1015675.001" ratio_time="62649.88599830809">
+      <failure message="Test failed with RANDOM_SEED=1763223483" />
     </testcase>
   </testsuite>
 </testsuites>

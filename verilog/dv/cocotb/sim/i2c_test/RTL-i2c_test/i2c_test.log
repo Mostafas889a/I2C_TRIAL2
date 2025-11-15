@@ -14,18 +14,22 @@
 700075.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0001
 700100.00ns INFO     cocotb                             [I2C Slave] Wait SDA falling
 1012125.00ns INFO     cocotb                             [I2C Slave] Detected SDA falling
-1012125.00ns ERROR    ..k 6.i2c_slave.handle_transaction Exception raised by this forked coroutine
-1012125.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func failed
+1012125.00ns INFO     cocotb                             [I2C Slave] START detected
+1015675.00ns ERROR    ..k 6.i2c_slave.handle_transaction Exception raised by this forked coroutine
+1015675.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func failed
                                                          Traceback (most recent call last):
-                                                           File "/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_slave.py", line 61, in handle_transaction
-                                                             if self.self.scl.value.binstr == '1':
-                                                                ^^^^^^^^^
-                                                         AttributeError: 'i2c_slave' object has no attribute 'self'
-1012125.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
+                                                           File "/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_slave.py", line 66, in handle_transaction
+                                                             address = await self.collect_bits(7)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                           File "/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_slave.py", line 21, in collect_bits
+                                                             return int(result, 2)
+                                                                    ^^^^^^^^^^^^^^
+                                                         ValueError: invalid literal for int() with base 2: '0x0x0x0'
+1015675.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
                                                          ** TEST                                                                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                          *****************************************************************************************************************************************************
-                                                         ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   FAIL     1012125.00          16.09      62921.10  **
+                                                         ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   FAIL     1015675.00          16.21      62649.89  **
                                                          *****************************************************************************************************************************************************
-                                                         ** TESTS=1 PASS=0 FAIL=1 SKIP=0                                                                           1012125.00          16.25      62293.85  **
+                                                         ** TESTS=1 PASS=0 FAIL=1 SKIP=0                                                                           1015675.00          16.37      62059.71  **
                                                          *****************************************************************************************************************************************************
                                                          
