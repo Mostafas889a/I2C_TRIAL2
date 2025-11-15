@@ -13,7 +13,7 @@
     assign  gpio6_en = 1'b1; \
     assign  gpio5 = scl_pin; \
     assign  gpio6 = sda_pin; \
-    M24AA64 slave(.A0(1), .A1(0), .A1(1), .WP(0), .SDA(sda_pin), .SCL(scl_pin), .RESET(resetb_tb));
+    M24AA64 slave(.A0(1), .A1(0), .A2(1), .WP(0), .SDA(sda_pin), .SCL(scl_pin), .RESET(resetb_tb));
 
 
 module user_project (
