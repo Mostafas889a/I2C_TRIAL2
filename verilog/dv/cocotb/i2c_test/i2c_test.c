@@ -2,7 +2,7 @@
 #include "CF_I2C.h"
 
 #define VGPIO_REG_ADDR 0x30FFFFFC
-
+#define I2C_BASE 0x30000000
 void vgpio_write_output(uint16_t value)
 {
     volatile uint32_t *vgpio_reg = (volatile uint32_t *)VGPIO_REG_ADDR;
@@ -33,6 +33,7 @@ void main() {
     GPIOs_loadConfigs();
     User_enableIF();  
     vgpio_write_output(1);
-    CF_I2C_setGclkEnable()
+    CF_I2C_setGclkEnable(I2C_BASE);
+    vgpio_write_output(2);
     return;
 }
