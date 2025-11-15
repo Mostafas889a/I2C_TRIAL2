@@ -7,8 +7,8 @@
 `define USER_VIP \
     wire sda = gpio9_monitor; \
     wire scl = gpio8_monitor; \
-    pullup sda_pu(gpio9_monitor); \
-    pullup scl_pu(gpio8_monitor); 
+    pullup sda_pu(gpio9); \
+    pullup scl_pu(gpio8); 
 
    // wire i2c_scl_o = gpio8_monitor; \
    // wire i2c_sda_o = gpio9_monitor; \
