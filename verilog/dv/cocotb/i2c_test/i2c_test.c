@@ -23,7 +23,10 @@ void vgpio_wait_val(uint16_t val)
     while (vgpio_read_input() != val);
 }
 
-void 
+void i2c_write_address(char adrm char data){
+    
+
+}
 void main() {
     ManagmentGpio_outputEnable();
     
