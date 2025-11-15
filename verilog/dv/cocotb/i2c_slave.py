@@ -41,14 +41,11 @@ class i2c_slave:
             self.sda_out.value = bit
             await FallingEdge(self.scl)
 
-        self.release_line()
-
     # ---------- Main protocol handling ----------
 
     async def run(self):
         """Loop forever until stop condition ends frame."""
         while True:
-            self.release_line()
             task = await cocotb.start(self.handle_transaction())
             await self.monitor_stop()
             task.kill()
@@ -75,7 +72,6 @@ class i2c_slave:
         await FallingEdge(self.scl)
         self.sda_out.value = 0
         await FallingEdge(self.scl)
-        self.release_line()
         cocotb.log.info("[I2C Slave] ACK sent")
 
         # Perform operation
@@ -90,7 +86,6 @@ class i2c_slave:
         await FallingEdge(self.scl)
         self.sda_out.value = 1
         await FallingEdge(self.scl)
-        self.release_line()
         cocotb.log.info("[I2C Slave] NACK sent")
 
     # ---------- Stop condition detection ----------
