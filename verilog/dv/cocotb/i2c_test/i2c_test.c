@@ -35,13 +35,13 @@ void main() {
     vgpio_write_output(1);
 
     i2c_init(62);
+    vgpio_write_output(2);
     
     
     i2c_write_byte(I2C_SLAVE_ADDR, 0, 0xAA);
     i2c_write_byte(I2C_SLAVE_ADDR, 1, 0x55);
     i2c_write_byte(I2C_SLAVE_ADDR, 2, 0xDE);
     i2c_write_byte(I2C_SLAVE_ADDR, 3, 0xAD);
-    vgpio_write_output(2);
 
     
     uint8_t val0 = i2c_read_byte(I2C_SLAVE_ADDR, 0);
