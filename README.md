@@ -62,6 +62,8 @@ This project integrates an I2C master controller into a Caravel user project wit
 
 ## How to Run Tests (When Ready)
 
+⚠️ **Important**: The `design_info.yaml` has been configured with the correct `USER_PROJECT_ROOT=/workspace/I2C_TRIAL2`
+
 ### Method 1: Using Helper Script (Recommended)
 ```bash
 cd /workspace/I2C_TRIAL2
@@ -70,19 +72,20 @@ cd /workspace/I2C_TRIAL2
 
 ### Method 2: Manual Execution
 ```bash
-export USER_PROJECT_ROOT=/workspace/I2C_TRIAL2
-cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test
+cd /workspace/I2C_TRIAL2/verilog/dv/cocotb
 caravel_cocotb -t i2c_test -d design_info.yaml
 ```
 
 ### View Results
 ```bash
 # View waveforms
-gtkwave /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/sim/i2c_test/i2c_test.vcd &
+gtkwave /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/i2c_test.vcd &
 
 # Check logs
-cat /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/sim/i2c_test/i2c_test.log
+cat /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/i2c_test.log
 ```
+
+📖 **Quick Start Guide**: See `QUICK_START.md` for detailed instructions and troubleshooting
 
 ## Next Steps (When Ready to Run)
 1. Run caravel-cocotb verification using the script above

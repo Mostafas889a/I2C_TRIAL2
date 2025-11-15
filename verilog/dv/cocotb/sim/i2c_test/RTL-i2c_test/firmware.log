@@ -1,0 +1,69 @@
+command: riscv32-unknown-elf-gcc   -I/nc/templates/mgmt_core_wrapper/verilog/dv/firmware -I/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs -I/nc/templates/mgmt_core_wrapper/verilog/dv/generated  -I/nc/templates/mgmt_core_wrapper/verilog/dv/ -I/nc/templates/mgmt_core_wrapper/verilog/common -I/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/hw -I/workspace/I2C_TRIAL2/verilog/dv/cocotb -I/nc/ip/CF_I2C/v2.0.0/fw -I/nc/ip/CF_IP_UTIL/v1.0.0/fw -O2 -g -march=rv32i_zicsr -mabi=ilp32 -D__vexriscv__ -ffreestanding -nostdlib -Wl,-Bstatic,-T,/workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-i2c_test/linker_script.lds,--strip-debug  -o /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/hex_files//i2c_test.elf /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/isr.c /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/simple_system_common.c /workspace/I2C_TRIAL2/ip/CF_I2C/fw/CF_I2C.c /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c -lgcc && riscv32-unknown-elf-objdump -d -S /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/hex_files//i2c_test.elf > /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/hex_files//i2c_test.lst  && riscv32-unknown-elf-objcopy -O verilog /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/hex_files//i2c_test.elf /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/hex_files//i2c_test.hex  && sed -ie "s/@10/@00/g" /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/hex_files//i2c_test.hex
+
+In file included from /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/isr.c:8:
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/defs.h:273: warning: "reg_debug_2" redefined
+  273 | #define reg_debug_2 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE))
+      | 
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/defs.h:147: note: this is the location of the previous definition
+  147 | #define reg_debug_2 (*(volatile uint32_t*)0x300FFFFC)
+      | 
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/defs.h:274: warning: "reg_debug_1" redefined
+  274 | #define reg_debug_1 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE - 4))
+      | 
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/defs.h:146: note: this is the location of the previous definition
+  146 | #define reg_debug_1 (*(volatile uint32_t*)0x300FFFF8)
+      | 
+/workspace/I2C_TRIAL2/ip/CF_I2C/fw/CF_I2C.c: In function 'CF_I2C_recieveCharArr':
+/workspace/I2C_TRIAL2/ip/CF_I2C/fw/CF_I2C.c:742:63: warning: passing argument 2 of 'CF_I2C_readDataFromReadFIFO' makes pointer from integer without a cast [-Wint-conversion]
+  742 |                 status = CF_I2C_readDataFromReadFIFO(i2c, data[i]);                     // read the current byte to the FIFO
+      |                                                           ~~~~^~~
+      |                                                               |
+      |                                                               uint8_t {aka unsigned char}
+/workspace/I2C_TRIAL2/ip/CF_I2C/fw/CF_I2C.c:575:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  575 | CF_DRIVER_STATUS CF_I2C_readDataFromReadFIFO(CF_I2C_TYPE_PTR i2c, uint8_t *data){
+      |                                                                   ~~~~~~~~~^~~~
+In file included from /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/firmware_apis.h:12,
+                 from /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:1:
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/defs.h:273: warning: "reg_debug_2" redefined
+  273 | #define reg_debug_2 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE))
+      | 
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/defs.h:147: note: this is the location of the previous definition
+  147 | #define reg_debug_2 (*(volatile uint32_t*)0x300FFFFC)
+      | 
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/defs.h:274: warning: "reg_debug_1" redefined
+  274 | #define reg_debug_1 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE - 4))
+      | 
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/defs.h:146: note: this is the location of the previous definition
+  146 | #define reg_debug_1 (*(volatile uint32_t*)0x300FFFF8)
+      | 
+In file included from /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/firmware_apis.h:18:
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/gpios.h: In function 'GPIOs_writeLowHigh':
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/gpios.h:204:27: warning: left shift count >= width of type [-Wshift-count-overflow]
+  204 |     reg_mprj_datah = data <<32;
+      |                           ^~
+In file included from /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/firmware_apis.h:19:
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/timer0.h: In function 'timer0_configureOneShot':
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/timer0.h:22:9: warning: implicit declaration of function 'timer0_enable'; did you mean 'timer0_en_write'? [-Wimplicit-function-declaration]
+   22 |         timer0_enable(0); // disable
+      |         ^~~~~~~~~~~~~
+      |         timer0_en_write
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/timer0.h: At top level:
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/timer0.h:45:6: warning: conflicting types for 'timer0_enable'; have 'void(_Bool)'
+   45 | void timer0_enable(bool is_enable){
+      |      ^~~~~~~~~~~~~
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/timer0.h:22:9: note: previous implicit declaration of 'timer0_enable' with type 'void(_Bool)'
+   22 |         timer0_enable(0); // disable
+      |         ^~~~~~~~~~~~~
+In file included from /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/firmware_apis.h:20:
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/mgmt_gpio.h: In function 'ManagmentGpio_inputEnable':
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/mgmt_gpio.h:30:5: warning: implicit declaration of function 'dummyDelay' [-Wimplicit-function-declaration]
+   30 |     dummyDelay(1);
+      |     ^~~~~~~~~~
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/firmware_apis.h: At top level:
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/firmware_apis.h:97:6: warning: conflicting types for 'dummyDelay'; have 'void(int)'
+   97 | void dummyDelay(int num){
+      |      ^~~~~~~~~~
+/nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/mgmt_gpio.h:30:5: note: previous implicit declaration of 'dummyDelay' with type 'void(int)'
+   30 |     dummyDelay(1);
+      |     ^~~~~~~~~~
+Pass: hex generation

@@ -1,0 +1,2 @@
+command used to run this sim:
+% /usr/local/bin/caravel_cocotb -t i2c_test -tag i2c_test
