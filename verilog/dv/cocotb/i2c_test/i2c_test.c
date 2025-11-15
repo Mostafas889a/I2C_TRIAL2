@@ -31,7 +31,9 @@ void main() {
     GPIOs_configure(5, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
     GPIOs_configure(6, GPIO_MODE_MGMT_STD_BIDIRECTIONAL);
     GPIOs_loadConfigs();
-    vgpio_write_output(1);
+    vgpio_write_output(5);
+    vgpio_write_output(6);
+    vgpio_write_output(7);
     
     
     i2c_init(62);
