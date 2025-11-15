@@ -25,8 +25,8 @@ void vgpio_wait_val(uint16_t val)
 
 void i2c_write_address(char adr, char data){
     CF_I2C_writeDataToWriteFIFO(I2C_BASE, data);
-    CF_I2C_setCommandReg(I2C_BASE, addr);
-    CF_I2C_sendStopCommand(I2C_BASE)
+    CF_I2C_setCommandReg(I2C_BASE, adr);
+    CF_I2C_sendStopCommand(I2C_BASE);
 }
 void main() {
     ManagmentGpio_outputEnable();
