@@ -31,6 +31,7 @@
 #define I2C_CMD_STOP          (1 << 12)
 
 #define I2C_SLAVE_ADDR 0x50
+#define I2C_EEPROM_ADDR 0x50
 
 static inline void reg_write(uint32_t addr, uint32_t value) {
     *((volatile uint32_t*)addr) = value;
@@ -61,6 +62,37 @@ static inline void i2c_write_byte(uint8_t slave_addr, uint8_t reg_addr, uint8_t 
 static inline uint8_t i2c_read_byte(uint8_t slave_addr, uint8_t reg_addr) {
     reg_write(I2C_REG_DATA, reg_addr);
     reg_write(I2C_REG_COMMAND, slave_addr | I2C_CMD_START | I2C_CMD_WRITE);
+    i2c_wait_busy();
+    
+    reg_write(I2C_REG_COMMAND, slave_addr | I2C_CMD_START | I2C_CMD_READ | I2C_CMD_STOP);
+    i2c_wait_busy();
+    
+    while (reg_read(I2C_REG_STATUS) & I2C_STAT_RD_EMPTY);
+    
+    return (uint8_t)(reg_read(I2C_REG_DATA) & 0xFF);
+}
+
+static inline void i2c_eeprom_write(uint8_t slave_addr, uint16_t addr, uint8_t data) {
+    reg_write(I2C_REG_DATA, (addr >> 8) & 0xFF);
+    reg_write(I2C_REG_COMMAND, slave_addr | I2C_CMD_START | I2C_CMD_WRITE);
+    i2c_wait_busy();
+    
+    reg_write(I2C_REG_DATA, addr & 0xFF);
+    reg_write(I2C_REG_COMMAND, slave_addr | I2C_CMD_WRITE);
+    i2c_wait_busy();
+    
+    reg_write(I2C_REG_DATA, data);
+    reg_write(I2C_REG_COMMAND, slave_addr | I2C_CMD_WRITE | I2C_CMD_STOP);
+    i2c_wait_busy();
+}
+
+static inline uint8_t i2c_eeprom_read(uint8_t slave_addr, uint16_t addr) {
+    reg_write(I2C_REG_DATA, (addr >> 8) & 0xFF);
+    reg_write(I2C_REG_COMMAND, slave_addr | I2C_CMD_START | I2C_CMD_WRITE);
+    i2c_wait_busy();
+    
+    reg_write(I2C_REG_DATA, addr & 0xFF);
+    reg_write(I2C_REG_COMMAND, slave_addr | I2C_CMD_WRITE);
     i2c_wait_busy();
     
     reg_write(I2C_REG_COMMAND, slave_addr | I2C_CMD_START | I2C_CMD_READ | I2C_CMD_STOP);

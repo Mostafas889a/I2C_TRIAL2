@@ -17,6 +17,7 @@
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_project.v
 -v $(USER_PROJECT_VERILOG)/rtl/i2c_slave_test.v
+-v $(USER_PROJECT_VERILOG)/rtl/M24AA64.v
 
 -v $(USER_PROJECT_VERILOG)/../ip/CF_IP_UTIL/hdl/cf_util_lib.v
 -v $(USER_PROJECT_VERILOG)/../ip/CF_I2C/hdl/rtl/axis_fifo.v
