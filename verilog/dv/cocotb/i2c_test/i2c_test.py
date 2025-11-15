@@ -1,7 +1,9 @@
 import cocotb
-from cocotb.triggers import ClockCycles, RisingEdge, FallingEdge, Timer
-from cocotb.clock import Clock
-import os
+from caravel_cocotb.caravel_interfaces import test_configure, report_test
+from cocotb.triggers import RisingEdge, FallingEdge
+import sys
+sys.path.append('..')
+from VirtualGPIOModel import VirtualGPIOModel
 
 @cocotb.test()
 async def i2c_test(dut):
