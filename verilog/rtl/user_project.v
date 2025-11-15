@@ -1,6 +1,6 @@
 `default_nettype none
 
-`define USE_USER_VIP
+// `define USE_USER_VIP
 
 
 

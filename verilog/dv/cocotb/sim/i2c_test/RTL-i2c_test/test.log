@@ -4,7 +4,7 @@ command:cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-i2c_test && 
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /usr/local/lib/python3.12/site-packages/cocotb
-     0.00ns INFO     cocotb                             Seeding Python random module with 1763221053
+     0.00ns INFO     cocotb                             Seeding Python random module with 1763222295
      0.00ns INFO     cocotb.regression                  Found test caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func
      0.00ns INFO     cocotb.regression                  running report_test.<locals>.wrapper_func (1/1)
 /usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/Timeout.py:19: DeprecationWarning: This method is now private.
@@ -23,25 +23,3 @@ command:cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-i2c_test && 
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [15:0]  = OUTPUT from Caravel (CPU writes)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [31:16] = INPUT to Caravel (CPU reads)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Starting Wishbone interface monitoring...
-699575.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0000, INPUT[31:16]=0x0000
-700075.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0001
-1069250.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0001, INPUT[31:16]=0x0000
-1096125.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0002
-1096150.00ns INFO     cocotb                             Test passed with (0)criticals (0)errors (0)warnings 
-1096150.00ns INFO     cocotb                             Cycles consumed = 43846 recommened timeout = 48231 cycles
-1096150.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func passed
-1096150.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
-                                                         ** TEST                                                                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
-                                                         *****************************************************************************************************************************************************
-                                                         ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   PASS     1096150.00          17.94      61109.17  **
-                                                         *****************************************************************************************************************************************************
-                                                         ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                                                           1096150.00          18.09      60595.54  **
-                                                         *****************************************************************************************************************************************************
-                                                         
-Reading firmware.hex
-firmware.hex loaded into memory
-Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
-VCD info: dumpfile waves.vcd opened for output.
- ===WARNING=== sky130_fd_io__top_xres4v2 :  Width of Input pulse for PAD input (= 225.00 ns)  is found to be in the range:  50 ns - 600 ns. In this range, the delay and pulse suppression of the input pulse are PVT dependent. : caravel_top.uut.padframe.resetb_pad       225
- ===WARNING=== sky130_fd_io__top_xres4v2 :  Width of Input pulse for PAD input (= 300.00 ns)  is found to be in the range:  50 ns - 600 ns. In this range, the delay and pulse suppression of the input pulse are PVT dependent. : caravel_top.uut.padframe.resetb_pad       525
- ===WARNING=== sky130_fd_io__top_xres4v2 :  Width of Input pulse for PAD input (= 500.00 ns)  is found to be in the range:  50 ns - 600 ns. In this range, the delay and pulse suppression of the input pulse are PVT dependent. : caravel_top.uut.padframe.resetb_pad      1025

@@ -3,7 +3,8 @@ from caravel_cocotb.caravel_interfaces import report_test
 from caravel_cocotb.caravel_interfaces import VirtualGPIOModel
 import cocotb
 from cocotb.triggers import RisingEdge
-from 
+from i2c_slave import i2c_slave
+
 @cocotb.test()
 @report_test
 async def i2c_test(dut):
