@@ -93,6 +93,7 @@
 
 
 `define USER_VIP \
+wire i2c_scl_o = 
 tri1  sda_pin = ~i2c_sda_o ? 1'b0 : 1'bz;
 tri1  scl_pin = ~i2c_scl_o ? 1'b0 : 1'bz;
 M24AA64 slave(.A0(1), .A1(0), .A1(1), .WP(0), .SDA(), .SCL(), .RESET())
