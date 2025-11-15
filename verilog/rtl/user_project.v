@@ -5,21 +5,20 @@
 
 
 `define USER_VIP \
+    wire i2c_scl_o = gpio8_monitor; \
+    wire i2c_sda_o = gpio9_monitor; \
+    tri1  sda_pin = ~i2c_sda_o ? 1'b0 : 1'bz; \
+    tri1  scl_pin = ~i2c_scl_o ? 1'b0 : 1'bz; \
+    assign  gpio8_en = 1'b1; \
+    assign  gpio9_en = 1'b1; \
+    assign  gpio8 = scl_pin; \
+    assign  gpio9 = sda_pin; \
+    // M24AA64 slave(.A0(1), .A1(0), .A2(1), .WP(0), .SDA(sda_pin), .SCL(scl_pin), .RESET(resetb_tb));
 
-   // wire i2c_scl_o = gpio8_monitor; \
-   // wire i2c_sda_o = gpio9_monitor; \
-   // tri1  sda_pin = ~i2c_sda_o ? 1'b0 : 1'bz; \
-   // tri1  scl_pin = ~i2c_scl_o ? 1'b0 : 1'bz; \
-   // assign  gpio8_en = 1'b1; \
-   // assign  gpio9_en = 1'b1; \
-   // assign  gpio8 = scl_pin; \
-   // assign  gpio9 = sda_pin; \
-   // M24AA64 slave(.A0(1), .A1(0), .A2(1), .WP(0), .SDA(sda_pin), .SCL(scl_pin), .RESET(resetb_tb));
-
-    wire sda = gpio9_monitor; \
-    wire scl = gpio8_monitor; \
-    pullup sda_pu(gpio9); \
-    pullup scl_pu(gpio8); 
+//    wire sda = gpio9_monitor; \
+//    wire scl = gpio8_monitor; \
+//    pullup sda_pu(gpio9); \
+//    pullup scl_pu(gpio8); 
 
 module user_project (
 `ifdef USE_POWER_PINS
