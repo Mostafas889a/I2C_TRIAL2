@@ -10,21 +10,3 @@
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [15:0]  = OUTPUT from Caravel (CPU writes)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [31:16] = INPUT to Caravel (CPU reads)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Starting Wishbone interface monitoring...
-699575.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0000, INPUT[31:16]=0x0000
-700075.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0001
-700100.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func failed
-                                                        Traceback (most recent call last):
-                                                          File "/usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/test_functions.py", line 116, in wrapper_func
-                                                            await func(*args, **kwargs)
-                                                          File "/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.py", line 20, in i2c_test
-                                                            await cocotb.start(i2c_slave(caravelEnv.dut.gpio8_monitor, caravelEnv.dut.gpio9_monitor, caravelEnv.dut.gpio9), {0x2,0x4,0x6,0x18})
-                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                                                        TypeError: start() takes 1 positional argument but 2 were given
-700100.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
-                                                        ** TEST                                                                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
-                                                        *****************************************************************************************************************************************************
-                                                        ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   FAIL      700100.00          10.96      63874.19  **
-                                                        *****************************************************************************************************************************************************
-                                                        ** TESTS=1 PASS=0 FAIL=1 SKIP=0                                                                            700100.00          11.11      62992.14  **
-                                                        *****************************************************************************************************************************************************
-                                                        

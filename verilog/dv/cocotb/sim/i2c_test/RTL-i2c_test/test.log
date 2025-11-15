@@ -4,7 +4,7 @@ command:cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-i2c_test && 
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
      0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /usr/local/lib/python3.12/site-packages/cocotb
-     0.00ns INFO     cocotb                             Seeding Python random module with 1763222612
+     0.00ns INFO     cocotb                             Seeding Python random module with 1763222696
      0.00ns INFO     cocotb.regression                  Found test caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func
      0.00ns INFO     cocotb.regression                  running report_test.<locals>.wrapper_func (1/1)
 /usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/Timeout.py:19: DeprecationWarning: This method is now private.
@@ -23,28 +23,3 @@ command:cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/sim/i2c_test/RTL-i2c_test && 
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [15:0]  = OUTPUT from Caravel (CPU writes)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Bits [31:16] = INPUT to Caravel (CPU reads)
   1325.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Starting Wishbone interface monitoring...
-699575.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Read: OUTPUT[15:0]=0x0000, INPUT[31:16]=0x0000
-700075.00ns INFO     cocotb.caravel_top                 [VirtualGPIOModel] Write OUTPUT[15:0]: 0x0001
-700100.00ns INFO     cocotb.regression                  report_test.<locals>.wrapper_func failed
-                                                        Traceback (most recent call last):
-                                                          File "/usr/local/lib/python3.12/site-packages/caravel_cocotb/interfaces/common_functions/test_functions.py", line 116, in wrapper_func
-                                                            await func(*args, **kwargs)
-                                                          File "/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.py", line 20, in i2c_test
-                                                            await cocotb.start(i2c_slave(caravelEnv.dut.gpio8_monitor, caravelEnv.dut.gpio9_monitor, caravelEnv.dut.gpio9), {0x2,0x4,0x6,0x18})
-                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                                                        TypeError: start() takes 1 positional argument but 2 were given
-700100.00ns INFO     cocotb.regression                  *****************************************************************************************************************************************************
-                                                        ** TEST                                                                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
-                                                        *****************************************************************************************************************************************************
-                                                        ** caravel_cocotb.interfaces.common_functions.test_functions.report_test.<locals>.wrapper_func   FAIL      700100.00          10.96      63874.19  **
-                                                        *****************************************************************************************************************************************************
-                                                        ** TESTS=1 PASS=0 FAIL=1 SKIP=0                                                                            700100.00          11.11      62992.14  **
-                                                        *****************************************************************************************************************************************************
-                                                        
-Reading firmware.hex
-firmware.hex loaded into memory
-Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
-VCD info: dumpfile waves.vcd opened for output.
- ===WARNING=== sky130_fd_io__top_xres4v2 :  Width of Input pulse for PAD input (= 225.00 ns)  is found to be in the range:  50 ns - 600 ns. In this range, the delay and pulse suppression of the input pulse are PVT dependent. : caravel_top.uut.padframe.resetb_pad       225
- ===WARNING=== sky130_fd_io__top_xres4v2 :  Width of Input pulse for PAD input (= 300.00 ns)  is found to be in the range:  50 ns - 600 ns. In this range, the delay and pulse suppression of the input pulse are PVT dependent. : caravel_top.uut.padframe.resetb_pad       525
- ===WARNING=== sky130_fd_io__top_xres4v2 :  Width of Input pulse for PAD input (= 500.00 ns)  is found to be in the range:  50 ns - 600 ns. In this range, the delay and pulse suppression of the input pulse are PVT dependent. : caravel_top.uut.padframe.resetb_pad      1025
