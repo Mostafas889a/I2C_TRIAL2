@@ -60,7 +60,31 @@ This project integrates an I2C master controller into a Caravel user project wit
 ✅ All RTL modules are lint-clean (verilator --lint-only)
 ⏸️ Caravel-cocotb tests prepared but NOT executed (per user request)
 
+## How to Run Tests (When Ready)
+
+### Method 1: Using Helper Script (Recommended)
+```bash
+cd /workspace/I2C_TRIAL2
+./run_test.sh i2c_test
+```
+
+### Method 2: Manual Execution
+```bash
+export USER_PROJECT_ROOT=/workspace/I2C_TRIAL2
+cd /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test
+caravel_cocotb -t i2c_test -d design_info.yaml
+```
+
+### View Results
+```bash
+# View waveforms
+gtkwave /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/sim/i2c_test/i2c_test.vcd &
+
+# Check logs
+cat /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/sim/i2c_test/i2c_test.log
+```
+
 ## Next Steps (When Ready to Run)
-1. Run caravel-cocotb verification: `cd verilog/dv/cocotb && make i2c_test`
+1. Run caravel-cocotb verification using the script above
 2. Review waveforms and test results
 3. Proceed to OpenLane hardening if verification passes
