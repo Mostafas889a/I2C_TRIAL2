@@ -4,8 +4,7 @@ from cocotb.clock import Clock
 import os
 
 @cocotb.test()
-@cocotb.parametrize_test({"clk_freq": [25]})
-async def i2c_test(dut, clk_freq):
+async def i2c_test(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=561831)
     
     cocotb.log.info("[TEST] Starting I2C master-slave communication test")

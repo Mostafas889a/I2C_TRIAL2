@@ -66,3 +66,4 @@ In file included from /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/f
 /nc/templates/mgmt_core_wrapper/verilog/dv/firmware/APIs/mgmt_gpio.h:30:5: note: previous implicit declaration of 'dummyDelay' with type 'void(int)'
    30 |     dummyDelay(1);
       |     ^~~~~~~~~~
+Pass: hex generation

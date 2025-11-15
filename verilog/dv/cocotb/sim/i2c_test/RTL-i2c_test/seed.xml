@@ -1,0 +1,8 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1763216856" />
+    <testcase name="i2c_test" classname="i2c_test.i2c_test" file="/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.py" lineno="6" time="0" sim_time_ns="0" ratio_time="nan">
+      <failure message="Test failed with RANDOM_SEED=1763216856" />
+    </testcase>
+  </testsuite>
+</testsuites>
