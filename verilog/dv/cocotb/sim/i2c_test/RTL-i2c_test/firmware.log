@@ -119,9 +119,20 @@ In file included from /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.
       |                  |
       |                  int
 /workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:42:25: note: in expansion of macro 'I2C_BASE'
-   42 |     CF_I2C_setPrescaler(I2C_BASE,0xF0);
+   42 |     CF_I2C_setPrescaler(I2C_BASE,4);
       |                         ^~~~~~~~
 /nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:223:54: note: expected 'CF_I2C_TYPE_PTR' {aka 'struct _CF_I2C_TYPE_ *'} but argument is of type 'int'
   223 | CF_DRIVER_STATUS CF_I2C_setPrescaler(CF_I2C_TYPE_PTR i2c, uint32_t value);
+      |                                      ~~~~~~~~~~~~~~~~^~~
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:5:18: warning: passing argument 1 of 'CF_I2C_transmitByte' makes pointer from integer without a cast [-Wint-conversion]
+    5 | #define I2C_BASE 0x30000000
+      |                  ^~~~~~~~~~
+      |                  |
+      |                  int
+/workspace/I2C_TRIAL2/verilog/dv/cocotb/i2c_test/i2c_test.c:43:25: note: in expansion of macro 'I2C_BASE'
+   43 |     CF_I2C_transmitByte(I2C_BASE, 0xAD, 0xAA);
+      |                         ^~~~~~~~
+/nc/ip/CF_I2C/v2.0.0/fw/CF_I2C.h:667:54: note: expected 'CF_I2C_TYPE_PTR' {aka 'struct _CF_I2C_TYPE_ *'} but argument is of type 'int'
+  667 | CF_DRIVER_STATUS CF_I2C_transmitByte(CF_I2C_TYPE_PTR i2c, uint8_t data, uint8_t addr);
       |                                      ~~~~~~~~~~~~~~~~^~~
 Pass: hex generation

@@ -1,5 +1,5 @@
 Test             status     start           end             duration      p/f      seed       
-RTL-i2c_test     done       07:33:39(Sat)   07:34:02(Sat)   0:00:22.67    passed   1763220821
+RTL-i2c_test     running    07:36:04(Sat)   -               -             -        -         
 
 
-Total: passed (1)   failed (0)   unknown (0)   elapsed time (0:00:22.73)
+Total: passed (0)   failed (0)   unknown (1)   elapsed time (0:00:00.04)
